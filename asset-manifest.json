@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cv-form/static/css/main.7692cf26.css",
+    "main.js": "/cv-form/static/js/main.5d4a4a19.js",
+    "index.html": "/cv-form/index.html",
+    "main.7692cf26.css.map": "/cv-form/static/css/main.7692cf26.css.map",
+    "main.5d4a4a19.js.map": "/cv-form/static/js/main.5d4a4a19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7692cf26.css",
+    "static/js/main.5d4a4a19.js"
+  ]
+}

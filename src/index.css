@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Jura', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+.form-cv {
+  width: 850px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15px;
+  gap: 30px 10px;
+}
+
+.input-form {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.input-form p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 95px;
+  height: 40px;
+}
+
+.input-form input {
+  width: 265px;
+  height: 40px;
+}
+
+.button-position {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  column-gap: 10px;
+  justify-content: end;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  background-color: #abdca3;
+  width: 90px;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.btn-variant {
+  background-color: #a1b9e9;
+}
+
+.grey {
+  background-color: #d9d9d9;
+}
+
+.yellow {
+  background-color: #fff9c8;
+}
+
+.aqua {
+  background-color: #eefbf6;
+}
+
+.underline {
+  border-bottom: 1px solid black;
+}
+
+.underline p {
+  width: auto !important;
+}

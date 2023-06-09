@@ -1,47 +1,45 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class InputForm extends Component {
-  constructor(props) {
-    super(props);
+const InputForm = ({ type, icon, haveClass, value }) => {
+  const [internalValue, setInternalValue] = useState('');
 
-    this.state = {
-      textInput: '',
-    };
+  useEffect(() => {
+    setInternalValue(value || '');
+  }, [value]);
 
-    this.handleChange = this.handleChange.bind(this);
-  }
+  const [statusHover, setStatusHover] = useState('no-hover');
 
-  handleChange(e) {
-    this.setState({
-      textInput: e.target.value,
-    });
-  }
+  const handleChange = (event) => setInternalValue(event.target.value);
 
-  render() {
-    const { text, show, onChangeData, editText } = this.props;
+  const handleHoverIn = () => setStatusHover('hover-effect');
 
+  const handleHoverOut = () => setStatusHover('no-hover');
+
+  const inputText = () => {
     return (
-      <div className="input-form">
-        <p>{`${text} :`}</p>
-        {!show ? (
-          editText !== undefined ? (
-            <input
-              type="text"
-              required
-              onChange={onChangeData}
-              value={editText}
-            />
-          ) : (
-            <input type="text" required onChange={onChangeData} />
-          )
-        ) : (
-          <div className="underline">
-            <p>{editText}</p>
-          </div>
-        )}
-      </div>
+      <input
+        type={type}
+        value={internalValue}
+        onChange={handleChange}
+        className={`${statusHover} ${haveClass}`}
+        onMouseOver={handleHoverIn}
+        onMouseLeave={handleHoverOut}
+      />
     );
-  }
-}
+  };
+
+  return (
+    <div className="input-form">
+      {icon ? (
+        <>
+          <img src={icon} alt="icon" className="icon-input" />
+          {inputText()}
+        </>
+      ) : (
+        <>{inputText()}</>
+      )}
+    </div>
+  );
+};
 
 export default InputForm;
